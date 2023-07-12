@@ -4,12 +4,14 @@ import { Header } from "../../components/Header";
 import { Hightlight } from "../../components/Highlight";
 import { Input } from "../../components/Input";
 import { Container, Content, Icon } from "./styles";
+import { useState } from "react";
 
 export function NewGroup() {
   const navigation = useNavigation();
+  const [group, setGroup] = useState("");
 
   function handleNew() {
-    navigation.navigate("players", { group: "Galera da Rocktet" });
+    navigation.navigate("players", { group });
   }
 
   return (
@@ -21,7 +23,11 @@ export function NewGroup() {
           title="Nova turma"
           subtitle="crie a turma para adicionar as pessoas"
         />
-        <Input placeholder="Nome da turma" />
+        <Input
+          placeholder="Nome da turma"
+          value={group}
+          onChangeText={setGroup}
+        />
         <Button title="Criar" style={{ marginTop: 20 }} onPress={handleNew} />
       </Content>
     </Container>
