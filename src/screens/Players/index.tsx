@@ -1,11 +1,11 @@
-import { FlatList } from "react-native";
+import { FlatList, TextInput } from "react-native";
 import { ButtonIcon } from "../../components/ButtonIcon";
 import { Filter } from "../../components/Filter";
 import { Header } from "../../components/Header";
 import { Hightlight } from "../../components/Highlight";
 import { Input } from "../../components/Input";
 import { Container, Form, HeaderList, NumbersOfPlayers } from "./styles";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { PlayerCard } from "../../components/PlayerCard";
 import { ListEmpty } from "../../components/ListEmpty";
 import { Button } from "../../components/Button";
@@ -26,6 +26,7 @@ export function Players() {
   const [newPlayerName, setNewPlayerName] = useState("");
   const route = useRoute();
   const { group } = route.params as RouteParams;
+  const newPlayerNameInputRef = useRef<TextInput>(null);
 
   async function handleAddPlayer() {
     if (newPlayerName.trim().length === 0) {
@@ -42,6 +43,9 @@ export function Players() {
 
     try {
       await playerAddByGroup(newPlayer, group);
+      newPlayerNameInputRef.current?.blur();
+
+      setNewPlayerName("");
       fetchPlayersByTeam();
     } catch (error) {
       if (error instanceof AppError) {
@@ -79,10 +83,13 @@ export function Players() {
       />
       <Form>
         <Input
+          inputRef={newPlayerNameInputRef}
           value={newPlayerName}
           placeholder="Nome da pessoa"
           autoCorrect={false}
           onChangeText={setNewPlayerName}
+          onSubmitEditing={handleAddPlayer}
+          returnKeyType="done"
         />
         <ButtonIcon icon="add" onPress={handleAddPlayer} />
       </Form>
