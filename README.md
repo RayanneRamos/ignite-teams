@@ -16,6 +16,13 @@
 
 [Ignite Teams]() é o segundo projeto desenvolvido durante o bootcamp ignite da [Rocketseat](https://www.rocketseat.com.br/) que foca nas tecnologias ReactJS, React Native e NodeJS. Consiste em criar uma aplicação para o usuário criar uma turma / grupo e adicionar os amigos em dois times separados para jogar um jogo online, um futebol de rua e outros esportes. Disponível nas plataformas Android e IOS.
 
+## 🌟 Funcionalidades
+
+1. **Criação de turma/grupo, permitindo que os usuários se conectem com seus amigos** 
+2. **Organização de partidas de lol e outros jogos**
+3. **Divisão dos amigos em dois times, tornando a experiência de jogo mais interativa**
+4. **Disponível para Android e iOS, permitindo que os usuários joguem em dispositivos móveis**
+
 ## 🧪 Technologies
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
