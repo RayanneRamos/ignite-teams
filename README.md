@@ -23,7 +23,7 @@
 3. **Divisão dos amigos em dois times, tornando a experiência de jogo mais interativa**
 4. **Disponível para Android e iOS, permitindo que os usuários joguem em dispositivos móveis**
 
-## 🧪 Technologies
+## 🧪 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
